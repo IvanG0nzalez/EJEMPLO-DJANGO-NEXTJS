@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  backend:
+    image: ivang0nzalez/backend-ejemplo-image
+    ports:
+      - "8000:8000"
+    env_file:
+      - ./django/.env
+
+  frontend:
+    image: ivang0nzalez/frontend-ejemplo-image
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
